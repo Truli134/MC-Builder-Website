@@ -2,6 +2,7 @@ const header = document.getElementById("siteHeader");
 const year = document.getElementById("year");
 const mobileMenuToggle = document.getElementById("mobileMenuToggle");
 const navLinks = document.getElementById("primaryNav");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (year) {
   year.textContent = String(new Date().getFullYear());
@@ -55,19 +56,24 @@ if (mobileMenuToggle && header && navLinks) {
 }
 
 const revealElements = document.querySelectorAll("[data-reveal]");
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
-
-revealElements.forEach((el) => observer.observe(el));
+if (revealElements.length) {
+  if (prefersReducedMotion.matches || !("IntersectionObserver" in window)) {
+    revealElements.forEach((el) => el.classList.add("in-view"));
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    revealElements.forEach((el) => observer.observe(el));
+  }
+}
 
 const filterButtons = document.querySelectorAll("[data-filter]");
 const projectCards = document.querySelectorAll("[data-project-category]");
@@ -115,15 +121,26 @@ const forms = document.querySelectorAll("form[data-form-type]");
 
 forms.forEach((form) => {
   const statusElement = form.querySelector(".form-status");
-  form.addEventListener("input", () => {
+  const submitButton = form.querySelector("button[type='submit']");
+  const defaultSubmitLabel = submitButton?.textContent || "Submit";
+
+  const setFormStatus = (message = "", status = "") => {
     if (!statusElement) return;
+    statusElement.textContent = message;
+    statusElement.className = status ? `form-status ${status}` : "form-status";
+  };
+
+  const isEndpointConfigured = (endpoint) =>
+    Boolean(endpoint) &&
+    !endpoint.includes("your-") &&
+    !endpoint.includes("REPLACE");
+
+  form.addEventListener("input", () => {
     if (!form.checkValidity()) {
-      statusElement.textContent = "Please complete all required fields.";
-      statusElement.className = "form-status error";
+      setFormStatus("Please complete all required fields.", "error");
       return;
     }
-    statusElement.textContent = "";
-    statusElement.className = "form-status";
+    setFormStatus();
   });
 
   form.addEventListener("submit", async (event) => {
@@ -131,23 +148,18 @@ forms.forEach((form) => {
 
     const formType = form.dataset.formType || "";
     const endpoint = FORMSPREE_ENDPOINTS[formType];
-    const submitButton = form.querySelector("button[type='submit']");
 
     if (!form.checkValidity()) {
       form.reportValidity();
-      if (statusElement) {
-        statusElement.textContent = "Please complete all required fields.";
-        statusElement.className = "form-status error";
-      }
+      setFormStatus("Please complete all required fields.", "error");
       return;
     }
 
-    if (!endpoint || endpoint.includes("your-")) {
-      if (statusElement) {
-        statusElement.textContent =
-          "Form endpoint not configured yet. Replace the Formspree IDs in site-config.js.";
-        statusElement.className = "form-status error";
-      }
+    if (!isEndpointConfigured(endpoint)) {
+      setFormStatus(
+        "Form endpoint not configured yet. Replace the Formspree IDs in site-config.js.",
+        "error"
+      );
       return;
     }
 
@@ -168,21 +180,16 @@ forms.forEach((form) => {
       }
 
       form.reset();
-      if (statusElement) {
-        statusElement.textContent = "Thanks! Your request has been submitted.";
-        statusElement.className = "form-status success";
-      }
+      setFormStatus("Thanks! Your request has been submitted.", "success");
     } catch (error) {
-      if (statusElement) {
-        statusElement.textContent =
-          "Could not submit right now. Please try again or contact us directly.";
-        statusElement.className = "form-status error";
-      }
+      setFormStatus(
+        "Could not submit right now. Please try again or contact us directly.",
+        "error"
+      );
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
-        submitButton.textContent =
-          formType === "vendor" ? "Submit Interest" : "Submit Request";
+        submitButton.textContent = defaultSubmitLabel;
       }
     }
   });
