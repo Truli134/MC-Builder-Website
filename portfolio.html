@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | MC Builders, Inc.</title>
+    <meta
+      name="description"
+      content="Explore featured builds by MC Builders across residential, commercial, retail, public works, and new construction projects."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://mcbuildersinc.net/portfolio.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Portfolio | MC Builders, Inc." />
+    <meta property="og:description" content="See completed builds and transformations across California." />
+    <meta property="og:url" content="https://mcbuildersinc.net/portfolio.html" />
+    <meta property="og:image" content="https://mcbuildersinc.net/og-default.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portfolio | MC Builders, Inc." />
+    <meta name="twitter:description" content="Projects that speak for themselves." />
+    <meta name="twitter:image" content="https://mcbuildersinc.net/og-default.jpg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Portfolio | MC Builders, Inc.",
+        "url": "https://mcbuildersinc.net/portfolio.html",
+        "about": {
+          "@type": "GeneralContractor",
+          "name": "MC Builders, Inc."
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="portfolio">
+    <div id="site-header"></div>
+    <main class="main-content">
+      <section class="page-hero portfolio-hero">
+        <div class="container" data-reveal>
+          <p class="eyebrow">Portfolio</p>
+          <h1 class="hero-title">Our Builds Across California</h1>
+          <p class="hero-lead">
+            From remodels to new construction, each project reflects our
+            standards of quality, trust, and clear delivery.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <article class="featured-project" data-reveal>
+            <p class="eyebrow">Featured Project</p>
+            <h2>Riverside Commercial Transformation</h2>
+            <p>
+              A multi-phase remodel delivered on an active site with minimal
+              disruption and high-end finish quality.
+            </p>
+          </article>
+
+          <div class="filter-row" data-reveal>
+            <button class="filter-chip active" type="button" data-filter="all">All</button>
+            <button class="filter-chip" type="button" data-filter="residential">Residential</button>
+            <button class="filter-chip" type="button" data-filter="commercial">Commercial</button>
+            <button class="filter-chip" type="button" data-filter="retail">Retail</button>
+            <button class="filter-chip" type="button" data-filter="public-works">Public Works</button>
+            <button class="filter-chip" type="button" data-filter="new-construction">New Construction</button>
+            <button class="filter-chip" type="button" data-filter="remodels">Remodels</button>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card" data-reveal data-project-category="commercial,remodels">
+              <div class="project-media"></div>
+              <div class="project-body">
+                <span class="before-after">Before / After</span>
+                <h3>Commercial Remodel - Riverside, CA</h3>
+                <p>Tenant improvement and structural refresh for modern operations.</p>
+              </div>
+            </article>
+            <article class="project-card" data-reveal data-project-category="retail,remodels">
+              <div class="project-media"></div>
+              <div class="project-body">
+                <span class="before-after">Before / After</span>
+                <h3>Retail Upgrade - Ontario, CA</h3>
+                <p>Interior rebuild and storefront improvements on an active site.</p>
+              </div>
+            </article>
+            <article class="project-card" data-reveal data-project-category="commercial,new-construction">
+              <div class="project-media"></div>
+              <div class="project-body">
+                <span class="before-after">New Build</span>
+                <h3>Office Expansion - San Diego, CA</h3>
+                <p>Ground-up addition with integrated mechanical and finish scope.</p>
+              </div>
+            </article>
+            <article class="project-card" data-reveal data-project-category="public-works">
+              <div class="project-media"></div>
+              <div class="project-body">
+                <span class="before-after">Public Works</span>
+                <h3>Civic Facility Repairs - Pomona, CA</h3>
+                <p>Code-aligned safety and accessibility improvements.</p>
+              </div>
+            </article>
+            <article class="project-card" data-reveal data-project-category="commercial,remodels">
+              <div class="project-media"></div>
+              <div class="project-body">
+                <span class="before-after">Remodel</span>
+                <h3>Medical Suite Retrofit - Anaheim, CA</h3>
+                <p>Fast-track interior buildout for healthcare use.</p>
+              </div>
+            </article>
+            <article class="project-card" data-reveal data-project-category="residential,new-construction">
+              <div class="project-media"></div>
+              <div class="project-body">
+                <span class="before-after">New Construction</span>
+                <h3>Residential Development - Temecula, CA</h3>
+                <p>Full site construction with phased turnover and inspections.</p>
+              </div>
+            </article>
+          </div>
+          <div id="portfolio-empty-state" class="empty-state" aria-live="polite">
+            No projects match this filter yet. Please choose another category.
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="./site-config.js"></script>
+    <script src="./analytics.js"></script>
+    <script src="./components.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

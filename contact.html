@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | MC Builders, Inc.</title>
+    <meta
+      name="description"
+      content="Request a quote from MC Builders, Inc. for residential, commercial, retail, and public works projects in California."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://mcbuildersinc.net/contact.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact | MC Builders, Inc." />
+    <meta property="og:description" content="Request a quote for your project and connect with MC Builders." />
+    <meta property="og:url" content="https://mcbuildersinc.net/contact.html" />
+    <meta property="og:image" content="https://mcbuildersinc.net/og-default.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact | MC Builders, Inc." />
+    <meta name="twitter:description" content="Tell us about your project and timeline." />
+    <meta name="twitter:image" content="https://mcbuildersinc.net/og-default.jpg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact MC Builders, Inc.",
+        "url": "https://mcbuildersinc.net/contact.html",
+        "mainEntity": {
+          "@type": "GeneralContractor",
+          "name": "MC Builders, Inc.",
+          "telephone": "+1-909-868-8853",
+          "email": "contact@mcbuildersinc.net",
+          "areaServed": "California"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="contact">
+    <div id="site-header"></div>
+    <main class="main-content">
+      <section class="page-hero contact-hero">
+        <div class="container" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h1 class="hero-title">Request a Quote</h1>
+          <p class="hero-lead">
+            Tell us about your project and we will connect you with the right
+            team to move it forward.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container two-col">
+          <article class="panel" data-reveal>
+            <h2>Project Inquiry Form</h2>
+            <form class="form-grid" data-form-type="contact">
+              <div>
+                <label for="client-name">Name</label>
+                <input id="client-name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="client-email">Email</label>
+                <input id="client-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="client-phone">Phone</label>
+                <input id="client-phone" name="phone" type="tel" autocomplete="tel" pattern="[\d\s()+-]{7,}" required />
+              </div>
+              <div>
+                <label for="project-type">Project Type</label>
+                <select id="project-type" name="projectType" autocomplete="off" required>
+                  <option>Residential</option>
+                  <option>Commercial</option>
+                  <option>Retail</option>
+                  <option>Public Works</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="project-description">Project Description</label>
+                <textarea id="project-description" name="projectDescription" autocomplete="off" required></textarea>
+              </div>
+              <div>
+                <label for="project-files">Upload Plans or Images</label>
+                <input id="project-files" name="attachment" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp" />
+              </div>
+              <div>
+                <label for="project-timeline">Preferred Timeline</label>
+                <input id="project-timeline" name="preferredTimeline" type="text" autocomplete="off" />
+              </div>
+              <div>
+                <label for="project-referral">How Did You Hear About Us?</label>
+                <input id="project-referral" name="referralSource" type="text" autocomplete="off" />
+              </div>
+              <input type="hidden" name="formName" value="Contact Request" />
+              <p class="consent-note">
+                By submitting, you agree to be contacted about your request and acknowledge our
+                <a class="contact-link" href="./privacy.html">Privacy Policy</a>.
+              </p>
+              <p class="form-status" aria-live="polite"></p>
+              <button class="btn btn-primary" type="submit">Submit Request</button>
+            </form>
+          </article>
+
+          <article class="panel" data-reveal>
+            <h2>Direct Contact</h2>
+            <p><strong>Phone:</strong> <a class="contact-link" href="tel:+19098688853">909-868-8853</a></p>
+            <p><strong>Email:</strong> <a class="contact-link" href="mailto:contact@mcbuildersinc.net">contact@mcbuildersinc.net</a></p>
+            <p><strong>Instagram:</strong> <a class="contact-link" href="https://www.instagram.com/mc.builders.inc/" target="_blank" rel="noopener noreferrer">@mc.builders.inc</a></p>
+            <iframe
+              class="map-placeholder"
+              title="MC Builders service area map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=California&output=embed"
+            ></iframe>
+          </article>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="./site-config.js"></script>
+    <script src="./analytics.js"></script>
+    <script src="./components.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
