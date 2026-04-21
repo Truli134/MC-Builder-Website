@@ -105,15 +105,13 @@ p {
   font-weight: 700;
 }
 
-.logo-mark {
-  width: 2rem;
-  height: 2rem;
+.logo-img {
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
-  background: var(--amber);
-  color: var(--charcoal);
-  display: grid;
-  place-items: center;
-  font-size: 0.85rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
 }
 
 .nav-links {
@@ -822,6 +820,18 @@ textarea {
   font-family: "DM Sans", sans-serif;
   font-weight: 700;
   color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+}
+
+.footer-logo-img {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .footer-bottom {

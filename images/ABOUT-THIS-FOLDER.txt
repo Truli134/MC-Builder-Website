@@ -1,0 +1,19 @@
+MC Builders – site images
+==========================
+
+Drag and drop image files into this folder to use them on the site.
+
+How to reference a file
+------------------------
+From any page in the site root (index.html, contact.html, etc.):
+  ./images/your-filename.jpg
+
+In CSS (e.g. styles.css):
+  url("./images/your-filename.jpg")
+
+Tips
+----
+• Prefer WebP or optimized JPG/PNG for smaller file sizes.
+• Use short, simple filenames (e.g. hero-kitchen.jpg) — avoid spaces.
+• After adding a new image, update the HTML or CSS where you want it to appear.
+• If you use Git, commit new files in this folder so they deploy with the site.

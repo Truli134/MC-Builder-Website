@@ -11,7 +11,14 @@ const getHeaderMarkup = (activePage) => `
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="logo" href="./index.html" aria-label="MC Builders home">
-        <span class="logo-mark">MC</span>
+        <img
+          class="logo-img"
+          src="./mc-logo.png"
+          alt=""
+          width="40"
+          height="40"
+          decoding="async"
+        />
         <span class="logo-text">Builders, Inc.</span>
       </a>
       <button
@@ -40,7 +47,10 @@ const getFooterMarkup = () => `
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <p class="footer-logo">MC Builders, Inc.</p>
+        <p class="footer-logo">
+          <img class="footer-logo-img" src="./mc-logo.png" alt="" width="36" height="36" decoding="async" />
+          <span>MC Builders, Inc.</span>
+        </p>
         <p>#BuildingTogether</p>
         <p>Est. 2021 · CSLB No. 1089787</p>
       </div>
